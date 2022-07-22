@@ -1,0 +1,98 @@
+/home/ivl1/anaconda3/envs/tensorflow-gpu/bin/python /home/ivl1/Yuchen/nlp/NLP_lab4/RNN/lab4_rnn_skeleton.py
+Loading data
+x_train.shape:  (32389, 30)
+x_train.shape:  (32389, 30, 1)
+vocabulary_size:  9860
+Vocab Size 9860
+2022-04-28 16:20:11.777742: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-04-28 16:20:11.783349: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-04-28 16:20:11.783560: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-04-28 16:20:11.784198: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2022-04-28 16:20:11.785557: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-04-28 16:20:11.785691: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-04-28 16:20:11.785804: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-04-28 16:20:12.161598: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-04-28 16:20:12.161737: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-04-28 16:20:12.161832: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2022-04-28 16:20:12.161925: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1510] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 9719 MB memory:  -> device: 0, name: NVIDIA GeForce RTX 3080 Ti, pci bus id: 0000:0a:00.0, compute capability: 8.6
+Model: "model"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+input_1 (InputLayer)         [(None, 30)]              0         
+_________________________________________________________________
+embedding (Embedding)        (None, 30, 10)            98600     
+_________________________________________________________________
+dropout (Dropout)            (None, 30, 10)            0         
+_________________________________________________________________
+simple_rnn (SimpleRNN)       (None, 30, 10)            210       
+_________________________________________________________________
+dense (Dense)                (None, 30, 9860)          108460    
+=================================================================
+Total params: 207,270
+Trainable params: 207,270
+Non-trainable params: 0
+_________________________________________________________________
+None
+Traning Model...
+2022-04-28 16:20:12.504274: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:185] None of the MLIR Optimization Passes are enabled (registered 2)
+Epoch 1/10
+2022-04-28 16:20:13.528523: I tensorflow/stream_executor/cuda/cuda_blas.cc:1760] TensorFloat-32 will be used for the matrix multiplication. This will only be logged once.
+507/507 [==============================] - 7s 12ms/step - loss: 7.2390
+2022-04-28 16:20:20.066253: W tensorflow/core/framework/cpu_allocator_impl.cc:80] Allocation of 3042007200 exceeds 10% of free system memory.
+
+Validation Set Perplexity: 579.84 
+
+Epoch 2/10
+507/507 [==============================] - 6s 13ms/step - loss: 6.4392
+2022-04-28 16:20:28.585905: W tensorflow/core/framework/cpu_allocator_impl.cc:80] Allocation of 3042007200 exceeds 10% of free system memory.
+
+Validation Set Perplexity: 566.26 
+
+Epoch 3/10
+507/507 [==============================] - 6s 12ms/step - loss: 6.4040
+2022-04-28 16:20:36.831626: W tensorflow/core/framework/cpu_allocator_impl.cc:80] Allocation of 3042007200 exceeds 10% of free system memory.
+
+Validation Set Perplexity: 524.19 
+
+Epoch 4/10
+507/507 [==============================] - 6s 12ms/step - loss: 6.2976
+2022-04-28 16:20:44.910166: W tensorflow/core/framework/cpu_allocator_impl.cc:80] Allocation of 3042007200 exceeds 10% of free system memory.
+
+Validation Set Perplexity: 472.03 
+
+Epoch 5/10
+507/507 [==============================] - 6s 12ms/step - loss: 6.2050
+2022-04-28 16:20:53.120563: W tensorflow/core/framework/cpu_allocator_impl.cc:80] Allocation of 3042007200 exceeds 10% of free system memory.
+
+Validation Set Perplexity: 432.36 
+
+Epoch 6/10
+507/507 [==============================] - 6s 12ms/step - loss: 6.1175
+
+Validation Set Perplexity: 389.72 
+
+Epoch 7/10
+507/507 [==============================] - 6s 13ms/step - loss: 6.0171
+
+Validation Set Perplexity: 353.44 
+
+Epoch 8/10
+507/507 [==============================] - 6s 12ms/step - loss: 5.9489
+
+Validation Set Perplexity: 333.90 
+
+Epoch 9/10
+507/507 [==============================] - 6s 12ms/step - loss: 5.8951
+
+Validation Set Perplexity: 316.69 
+
+Epoch 10/10
+507/507 [==============================] - 6s 12ms/step - loss: 5.8456
+
+Validation Set Perplexity: 301.30 
+
+
+Process finished with exit code 0
+
